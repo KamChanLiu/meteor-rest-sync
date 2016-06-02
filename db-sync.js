@@ -42,6 +42,7 @@ DBSync.addCollection = function( config ){
   let {collections, updatedAtField} = this._settings;
   collections[ config.collection._name ] = _.defaults(config,{
     "remote_external_id_field": "id",
+    shouldClean: config.clean ? config.clean : false
   });
 
   collections[ config.collection._name ].index = _.defaults(config.index,{
@@ -188,6 +189,11 @@ DBSync._handleFetch = function(err, resp, key, callback ){
 
     var last_update;
     var error_count = 0;
+
+    if (settings.shouldClean) {
+      settings.collection.remove({});
+    }
+
     _.each( docs, function(doc){
       if( !settings.index.shouldInsert( doc ) ){ return; }
       try{

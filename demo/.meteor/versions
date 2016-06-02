@@ -11,6 +11,8 @@ callback-hook@1.0.3
 check@1.0.5
 coffeescript@1.0.6
 ddp@1.1.0
+demo:articles@0.0.1
+demo:core@0.0.1
 deps@1.0.7
 ejson@1.0.6
 fastclick@1.0.3
@@ -35,8 +37,6 @@ mobile-status-bar@1.0.3
 momentjs:moment@2.10.6
 mongo@1.1.0
 nimble:restivus@0.8.4
-noshpit:articles@0.0.1
-noshpit:core@0.0.1
 observe-sequence@1.0.6
 ordered-dict@1.0.3
 package-version-parser@3.0.3
